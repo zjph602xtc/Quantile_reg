@@ -68,11 +68,11 @@ while (j<inp.Results.maxit)
         if gammax(end,t_rr)<0
             % step 5
             k=b./ga;
-            k=find(k==min(k(ga>0 & ~freevarrow )) ,1);
+            k=find(k==min(k(ga>0 & ~freevarrow )) & (ga>0) ,1);
         else
             % step 5
             k=-b./ga;
-            k=find(k==min(k(ga<0 & ~freevarrow )) ,1);
+            k=find(k==min(k(ga<0 & ~freevarrow )) & (ga<0) ,1);
         end
         % pivoting
         % step 6
@@ -88,7 +88,7 @@ while (j<inp.Results.maxit)
         end
         % step 5
         k=b./ga;
-        k=find(k==min(k(ga>0 & ~freevarrow )),1);
+        k=find(k==min(k(ga>0 & ~freevarrow )) & (ga>0),1);
         
         % pivoting
         % step 6
@@ -203,11 +203,11 @@ while (j<maxit)
         if gammax(end,t_rr)<0
             % step 5
             k=b./yy;
-            k=find(k==min(k(yy>0 & ~freevarrow )) ,1);
+            k=find(k==min(k(yy>0 & ~freevarrow )) & (yy>0) ,1);
         else
             % step 5
             k=-b./yy;
-            k=find(k==min(k(yy<0 & ~freevarrow )) ,1);
+            k=find(k==min(k(yy<0 & ~freevarrow )) & (yy<0) ,1);
         end
         
         % pivoting
@@ -225,7 +225,7 @@ while (j<maxit)
         end
         % step 5
         k=b./yy;
-        k=find(k==min(k(yy>0 & ~freevarrow )),1);
+        k=find(k==min(k(yy>0 & ~freevarrow )) & (yy>0),1);
         
         % pivoting
         % step 6

@@ -66,11 +66,11 @@ if isempty(inp.Results.method)
             if gammax(end,t_rr)<0
                 % step 5
                 k=b./yy;
-                k=find(k==min(k(yy>0 & ~freevarrow )) ,1);
+                k=find(k==min(k(yy>0 & ~freevarrow )) & (yy>0) ,1);
             else
                 % step 5
                 k=-b./yy;
-                k=find(k==min(k(yy<0 & ~freevarrow )) ,1);
+                k=find(k==min(k(yy<0 & ~freevarrow )) & (yy<0) ,1);
             end
             
             % pivoting
@@ -92,7 +92,7 @@ if isempty(inp.Results.method)
             %         end
             % step 5
             k=b./yy;
-            k=find(k==min(k(yy>0 & ~freevarrow )),1);
+            k=find(k==min(k(yy>0 & ~freevarrow )) & (yy>0),1);
             
             % pivoting
             % step 6
